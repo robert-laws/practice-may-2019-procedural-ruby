@@ -6,5 +6,6 @@
 
 ## [Methods](methods/README.md)
 
+## [Operators](operators/README.md)
 
-
+## [Conditionals](conditionals/README.md)
