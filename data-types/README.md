@@ -24,6 +24,9 @@ price = 84.24
 
 ```ruby
 vacation_day = true
+# all values are 'trurthy' except for nil, false, FALSE
+# to determine if something is true or false use the !!
+# ex. !!"hello" -> true
 ```
 
 ## Nil
