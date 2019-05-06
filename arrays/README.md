@@ -25,3 +25,78 @@ names.each do |name|
   puts "hello, #{name}!"
 end
 ```
+
+Iteration with Map (aka Collect)
+
+```ruby
+# returns an array equal in size as the original array
+numbers = [2, 4, 6, 8, 10]
+squares = numbers.map do |number|
+  number * number
+end
+```
+
+Boolean enumerators - working with arrays
+
+```ruby
+numbers = [2, 4, 6, 8, 10]
+numbers.all? do |n|
+  n % 4 == 0
+end
+# false
+
+numbers.any? do |n|
+  n % 4 == 0
+end
+# true
+
+numbers.none? do |n|
+  n % 20 == 0
+end
+# true
+
+numbers.include?(5)
+# false
+```
+
+Search Enumerators
+
+Select - will return all elements that return true
+
+```ruby
+numbers = [2, 4, 6, 8, 10]
+result = numbers.select do |n|
+  n % 4 == 0
+end
+# [4, 8]
+
+numbers.select { |n| n.even? }
+# [2, 4, 6, 8, 10]
+```
+
+Find (aka Detect) - will return the first element that returns true
+
+```ruby
+numbers = [2, 4, 6, 8, 10]
+result = numbers.find do |n|
+  n % 4 == 0
+end
+# 4
+```
+
+Reject - will return all elements that return false
+
+```ruby
+numbers = [2, 4, 6, 8, 10]
+result = numbers.reject do |n|
+  n % 4 == 0
+end
+# [2, 6, 10]
+```
+
+```ruby
+names = ["Val", "Mel", "Ned"]
+names.map do |name|  
+  name
+end.join(", ")
+```
