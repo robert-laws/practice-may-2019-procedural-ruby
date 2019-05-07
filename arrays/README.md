@@ -26,6 +26,13 @@ names.each do |name|
 end
 ```
 
+```ruby
+names = ["Val", "Mel", "Ned", "Bob", "Kal", "Don", "Sal"]
+names.each_with_index do |element, index|
+  puts "#{index + 1}. #{element}"
+end
+```
+
 Iteration with Map (aka Collect)
 
 ```ruby
@@ -99,4 +106,36 @@ names = ["Val", "Mel", "Ned"]
 names.map do |name|  
   name
 end.join(", ")
+```
+
+Sort
+
+```ruby
+names = ["Val", "Mel", "Ned", "Bob", "Kal", "Don", "Sal"]
+
+names.sort do |a, b|
+  a <=> b # spaceship operator
+end
+
+names.sort # same as above
+```
+
+Other array methods
+
+Inject
+
+```ruby
+numbers = [2, 4, 6, 8, 10]
+numbers.inject do |memo, number|
+  memo + number
+end
+```
+
+```ruby
+names = ["Val", "Sam", "Mel", "Ned", "Bob", "Kal", "Don", "Sal"]
+def find_a(array)
+  array.find_all do |item|
+    item.downcase.start_with?('s')
+  end
+end
 ```
